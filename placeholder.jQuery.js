@@ -19,7 +19,7 @@
 	  
 	  options = options || {};
 		var defaults = {
-		  hintActiveClass: 'placeholder',
+		  placeholderClass: 'placeholder',
 			hintClass: 'placeholder_el',
 			hintName: 'placeholder_dummy_input'
 		};
@@ -31,12 +31,12 @@
           var input = $(this);
           if (input.val() == input.attr('placeholder')) {
             input.val('');
-            input.removeClass(settings.hintActiveClass);
+            input.removeClass(settings.placeholderClass);
           }
         }).blur(function() {
           var input = $(this);
           if (input.val() == '') {
-            input.addClass(settings.hintActiveClass);
+            input.addClass(settings.placeholderClass);
             input.val(input.attr('placeholder'));
           }
         }).blur().parents('form').submit(function() {
@@ -71,7 +71,7 @@
 
         // hide the input
         $(this).hide();
-        $(this).addClass(settings.hintActiveClass);
+        $(this).addClass(settings.placeholderClass);
 
         // don't allow autocomplete (sorry, no remember password)
         $(this).attr('autocomplete', 'off');
@@ -80,7 +80,7 @@
         hint.focus(function(){
           dummyInput = $(this);
           $(this).next('input:first')
-            .removeClass(settings.hintActiveClass)
+            .removeClass(settings.placeholderClass)
             .show()
             .focus()
             .unbind('blur')
