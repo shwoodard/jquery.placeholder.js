@@ -4,7 +4,19 @@
 // Modified by Sam Woodard
 // Released under the MIT License
 (function($){
+  $.supportPlaceHolder = function () {
+    var retval = false;
+    if(!!('placeholder' in document.createElement('input'))) {
+      retval = true;
+    }
+    return retval;
+  };
+  
 	$.fn.placeholder = function(options){
+	  if ($.supportPlaceHolder()) {
+	    return $(this);
+	  }
+	  
 	  options = options || {};
 		var defaults = {
 		  hintActiveClass: 'placeholder',
