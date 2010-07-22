@@ -1,5 +1,8 @@
-// EZPZ Hint v1.1.1; Copyright (c) 2009 Mike Enriquez, http://theezpzway.com; Released under the MIT License
-// Modified by Wildfire Inc.
+// Based on
+// 1) EZPZ Hint v1.1.1; Copyright (c) 2009 Mike Enriquez, http://theezpzway.com
+// 2) http://gist.github.com/379601
+// Modified by Sam Woodard
+// Released under the MIT License
 (function($){
 	$.fn.placeholder = function(options){
 	  options = options || {};
