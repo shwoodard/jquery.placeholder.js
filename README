@@ -3,3 +3,15 @@ Based on
 2) http://gist.github.com/379601
 Modified by Sam Woodard
 Released under the MIT License
+
+Usage
+=========
+
+<input type="text" placeholder="Login" />
+<input type="password" placeholder="Password" />
+
+(function ($) {
+  $(document).ready(function () {
+    $('[placeholder]').placeholder();
+  });
+})(jQuery);
