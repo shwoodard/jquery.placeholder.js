@@ -11,7 +11,7 @@
     }
     return retval;
   };
-  
+
 	$.fn.placeholder = function(options){
 	  if ($.supportPlaceHolder()) {
 	    return $(this);
