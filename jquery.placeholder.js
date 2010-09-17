@@ -4,7 +4,7 @@
 // Modified by Sam Woodard
 // Released under the MIT License
 (function($){
-  $.supportPlaceHolder = function () {
+  $.supportsPlaceHolder = function () {
     var retval = false;
     if(!!('placeholder' in document.createElement('input'))) {
       retval = true;
@@ -12,21 +12,21 @@
     return retval;
   };
 
-	$.fn.placeholder = function(options){
-	  if ($.supportPlaceHolder()) {
-	    return $(this);
-	  }
-	  
-	  options = options || {};
-		var defaults = {
-		  placeholderClass: 'placeholder',
-			hintClass: 'placeholder_el',
-			hintName: 'placeholder_dummy_input'
-		};
-		var settings = $.extend(defaults, options);
+  $.fn.placeholder = function(options){
+    if ($.supportsPlaceHolder()) {
+      return $(this);
+    }
 
-		return this.each(function(i){
-		  if ($(this).attr('type') !== 'password') {
+    options = options || {};
+    var defaults = {
+      placeholderClass: 'placeholder',
+      hintClass: 'placeholder_el',
+      hintName: 'placeholder_dummy_input'
+    };
+    var settings = $.extend(defaults, options);
+
+    return this.each(function(i){
+      if ($(this).attr('type') !== 'password') {
         $(this).focus(function() {
           var input = $(this);
           if (input.val() == input.attr('placeholder')) {
