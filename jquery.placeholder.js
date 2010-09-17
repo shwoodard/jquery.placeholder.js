@@ -102,6 +102,6 @@
           $(this).find('.' + settings.hintClass).remove();
         });
       }
-		});
-	};
+    });
+  };
 })(jQuery);
